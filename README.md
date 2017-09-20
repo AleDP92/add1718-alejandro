@@ -8,3 +8,5 @@ Esto es un ejemplo de fichero de texto bla bla bla
 * 1
 * 2
 * 3
+
+![image](../images/01.jpg)
