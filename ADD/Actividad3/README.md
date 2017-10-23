@@ -83,3 +83,16 @@ Realizar algunos ejercicios tales como la ejecución de programas en remoto o la
 * Instalar software cliente SSH en Windows. Para este ejemplo usaremos "PuTTY"
 
 ![image](imagenes/Selección_026.png)
+
+* SO Windows 7
+* IP estática 172.18.24.11
+* Nombre de equipo: ssh-client24b
+* Añadir en `C:\Windows\System32\drivers\etc\hosts` el equipo ssh-server24 y ssh-client24a.
+
+![image](imagenes/Selección_014.png)
+
+* Comprobar haciendo ping a ambos equipos
+
+![image](imagenes/Selección_017.png)
+
+![image](imagenes/Selección_018.png)
