@@ -25,30 +25,39 @@ Realizar algunos ejercicios tales como la ejecución de programas en remoto o la
 * Comprobaciones.
 
   * ip a
+
   ![image](imagenes/Selección_003.png)
 
   * route -n
+
   ![image](imagenes/Selección_004.png)
 
   * ping 8.8.4.4 -i 2
+
   ![image](imagenes/Selección_005.png)
 
   * host www.google.es
+
   ![image](imagenes/Selección_006.png)
 
   * ping ssh-client24a
+
   ![image](imagenes/Selección_011.png)
 
   * ping ssh-client24b
+
   ![image](imagenes/Selección_012.png)
 
   * lsblk
+
   ![image](imagenes/Selección_007.png)
 
   * blkid
+
   ![image](imagenes/Selección_008.png)
 
 * Crear los siguientes usuarios en ssh-server24:
+
 ![image](imagenes/Selección_009.png)
 
 ## 1.2 Cliente GNU/Linux
@@ -59,10 +68,13 @@ Realizar algunos ejercicios tales como la ejecución de programas en remoto o la
   * Nombre de equipo: ssh-client24a
 
 * Añadir en /etc/hosts el equipo ssh-server24, y ssh-client24b.
+
 ![image](imagenes/Selección_013.png)
 
 * Comprobar haciendo ping a ambos equipos.
+
 ![image](imagenes/Selección_015.png)
+
 
 ![image](imagenes/Selección_016.png)
 
