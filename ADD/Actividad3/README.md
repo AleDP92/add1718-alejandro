@@ -96,3 +96,79 @@ Realizar algunos ejercicios tales como la ejecución de programas en remoto o la
 ![image](imagenes/Selección_017.png)
 
 ![image](imagenes/Selección_018.png)
+
+# 2. Instalación del servicio SSH
+
+* Instalar el servicio SSH en la máquina ssh-server
+
+![image](imagenes/Selección_019.png)
+
+## 2.1 Comprobación
+
+* Desde el propio ssh-server, verificar que el servicio está en ejecución
+
+  * `systemctl status sshd`, esta es la forma de comprobarlo en systemd
+
+![image](imagenes/Selección_020.png)  
+
+* `netstat -ntap`: Comprobar que el servicio está escuchando por el puerto 22
+
+![image](imagenes/Selección_021.png)  
+
+## 2.2 Primera conexión SSH desde cliente GNU/Linux
+
+* Comprobamos la conectividad con el servidor desde el cliente con `ping ssh-serverXX`
+
+![image](imagenes/Selección_022.png)
+
+* Desde el cliente comprobamos que el servicio SSH es visible con `nmap -Pn ssh-serverXX`. Debe mostrarnos que el puerto 22 está abierto. Esto es, debe aparecer una línea como "22/tcp open ssh"
+
+![image](imagenes/Selección_023.png)
+
+* Desde el cliente GNU/Linux nos conectamos mediante `ssh 1er-apellido-alumno1@ssh-server`. Capturar imagen del intercambio de claves que se produce en el primer proceso de conexión SSH
+
+![image](imagenes/Selección_024.png)
+
+* Comprobar contenido del fichero `$HOME/.ssh/known_hosts` en el equipo ssh-client1. OJO si el prompt pone ssh-server están el el servidor, y si pone ssh-client1 están el el cliente1.
+
+![image](imagenes/Selección_025.png)
+
+## 2.3 Primera conexión SSH desde cliente Windows
+
+* Desde el cliente Windows nos conectamos usando `PuTTY`. Capturar imagen del intercambio de claves que se produce en el primer proceso de conexión SSH.
+
+![image](imagenes/Selección_027.png)
+
+![image](imagenes/Selección_028.png)
+
+![image](imagenes/Selección_029.png)
+
+# 3. ¿Y si cambiamos las claves del servidor?
+
+* Confirmar que existen los siguientes ficheros en `/etc/ssh`, Los ficheros `ssh_host*key` y `ssh_host*key.pub`, son ficheros de clave pública/privada que identifican a nuestro servidor frente a nuestros clientes:
+
+![image](imagenes/Selección_030.png)
+
+* Modificar el fichero de configuración SSH `(/etc/ssh/sshd_config)` para dejar una única línea: `HostKey /etc/ssh/ssh_host_rsa_key`. Comentar el resto de líneas con configuración HostKey. Este parámetro define los ficheros de clave publica/privada que van a identificar a nuestro servidor. Con este cambio decimos que sólo vamos a usar las claves del tipo RSA.
+
+![image](imagenes/Selección_031.png)
+
+## 3.1 Regenerar certificados
+
+Vamos a cambiar o volver a generar nuevas claves públicas/privadas para la identificación de nuestro servidor.
+
+* En ssh-serverXX, como usuario root ejecutamos: `ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key`
+
+![image](imagenes/Selección_032.png)
+
+![image](imagenes/Selección_033.png)
+
+* No poner password al certificado de la máquina
+
+![image](imagenes/Selección_034.png)
+
+![image](imagenes/Selección_035.png)
+
+* Reiniciar el servicio SSH: `systemctl restart sshd` y comprobar que el servicio está en ejecución correctamente: `systemctl status sshd`
+
+![image](imagenes/Selección_036.png)
