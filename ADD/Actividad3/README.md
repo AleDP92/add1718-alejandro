@@ -172,3 +172,32 @@ Vamos a cambiar o volver a generar nuevas claves públicas/privadas para la iden
 * Reiniciar el servicio SSH: `systemctl restart sshd` y comprobar que el servicio está en ejecución correctamente: `systemctl status sshd`
 
 ![image](imagenes/Selección_036.png)
+
+## 3.2 Comprobamos
+
+![image](imagenes/Selección_037.png)
+
+# 4 Personalización del prompt Bash
+
+* Por ejemplo, podemos añadir las siguientes líneas al fichero de configuración del usuario1 en la máquina servidor (`Fichero /home/1er-apellido-alumno1/.bashrc`)
+
+![image](imagenes/Selección_044.png)
+
+* Además, crear el fichero el fichero `/home/1er-apellido-alumno1/.alias`, donde pondremos el siguiente contenido:
+
+![image](imagenes/Selección_045.png)
+
+* Comprobar funcionamiento de la conexión SSH desde cada cliente.
+
+### Linux
+![image](imagenes/Selección_040.png)
+
+![image](imagenes/Selección_041.png)
+
+![image](imagenes/Selección_042.png)
+
+![image](imagenes/Selección_043.png)
+
+### Windows
+
+![image](imagenes/Selección_046.png)
