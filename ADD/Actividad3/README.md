@@ -201,3 +201,123 @@ Vamos a cambiar o volver a generar nuevas claves públicas/privadas para la iden
 ### Windows
 
 ![image](imagenes/Selección_046.png)
+
+# 5. Autenticación mediante claves públicas
+
+El objetivo de este apartado es el de configurar SSH para poder acceder desde el cliente1, usando el 1er-apellido-alumno4 sin poner password, pero usando claves pública/privada.
+
+Para ello, vamos a configurar la autenticación mediante clave pública para acceder con nuestro usuario personal desde el equipo cliente al servidor con el usuario 1er-apellido-alumno4.
+
+* Vamos a la máquina ss-clientXXa
+
+* Iniciamos sesión con nuestro usuario nombre-alumno de la máquina ssh-client24a
+
+![image](imagenes/Selección_047.png)
+
+* Ejecutamos `ssh-keygen -t rsa` para generar un nuevo par de claves para el usuario en `/home/nuestro-usuario/.ssh/id_rsa` y `/home/nuestro-usuario/.ssh/id_rsa.pub`
+
+![image](imagenes/Selección_048.png)
+
+![image](imagenes/Selección_049.png)
+
+Ahora vamos a copiar la clave pública (id_rsa.pub) del usuario (nombre-de-alumno) de la máquina cliente, al fichero "authorized_keys" del usuario remoto 1er-apellido-alumno4 (que está definido en el servidor.
+
+* Una forma de hacerlo sería usando el programa de copia segura `scp`
+
+![image](imagenes/Selección_050.png)
+
+* Comprobar que ahora al acceder remotamente vía SSH
+
+  * Desde ssh-client24a, NO se pide password
+
+![image](imagenes/Selección_052.png)    
+
+  * Desde ssh-client24b, SI se pide el password
+
+![image](imagenes/Selección_053.png)
+
+# 6. Uso de SSH como túnel para X
+
+* Instalar en el servidor una aplicación de entorno gráfico (APP1) que no esté en los clientes. Por ejemplo Geany. Si estuviera en el cliente entonces buscar otra aplicación o desinstalarla en el cliente
+
+![image](imagenes/Selección_055.png)
+
+* Modificar servidor SSH para permitir la ejecución de aplicaciones gráficas, desde los clientes. Consultar fichero de configuración `/etc/ssh/sshd_config` (Opción `X11Forwarding yes`)
+
+![image](imagenes/Selección_054.png)
+
+* Comprobar desde el clienteXXa, que funciona APP1(del servidor). Con el comando `ssh -X remoteuser1@ssh-server`, podemos conectarnos de forma remota al servidor, y ahora ejecutamos APP1 de forma remota
+
+![image](imagenes/Selección_058.png)
+
+![image](imagenes/Selección_059.png)
+
+# 7. Aplicaciones Windows nativas
+
+Podemos tener aplicaciones Windows nativas instaladas en ssh-server mediante el emulador WINE.
+
+* Instalar emulador Wine en el ssh-server
+
+![image](imagenes/Selección_060.png)
+
+* Ahora podríamos instalar alguna aplicación (APP2) de Windows en el servidor SSH usando el emulador Wine. O podemos usar el Block de Notas que viene con Wine: wine notepad
+
+![image](imagenes/Selección_061.png)
+
+* Comprobar funcionamiento de APP2, accediendo desde ssh-client1
+
+![image](imagenes/Selección_062.png)
+
+# 8. Restricciones de uso
+
+Vamos a modificar los usuarios del servidor SSH para añadir algunas restricciones de uso del servicio.
+
+## 8.1 Restricción sobre un usuario
+
+* En el servidor tenemos el usuario remoteuser2 y remoteuser4. Desde local en el servidor podemos usar sin problemas el usuario
+
+![image](imagenes/Selección_063.png)
+
+* Consultar/modificar fichero de configuración del servidor SSH (`/etc/ssh/sshd_config`) para restringir el acceso a determinados usuarios. Consultar las opciones `AllowUsers`, `DenyUsers`. Restringimos a remoteuser2 y dejamos a remoteuser4
+
+![image](imagenes/Selección_064.png)
+
+* Comprobarlo la restricción al acceder desde los clientes
+
+![image](imagenes/Selección_065.png)
+
+![image](imagenes/Selección_066.png)
+
+![image](imagenes/Selección_067.png)
+
+## 8.2 Restricción sobre una aplicación
+
+* Crear grupo remoteapps
+
+![image](imagenes/Selección_068.png)
+
+* Incluir al usuario remoteuser4 en el grupo remoteapps
+
+![image](imagenes/Selección_069.png)
+
+![image](imagenes/Selección_070.png)
+
+* Poner al programa APP1 el grupo propietario a remoteapps
+
+![image](imagenes/Selección_071.png)
+
+* Poner los permisos del ejecutable de APP1 a 750. Para impedir que los usurios que no pertenezcan al grupo puedan ejecutar el programa
+
+![image](imagenes/Selección_072.png)
+
+* Comprobamos el funcionamiento en el servidor
+
+![image](imagenes/Selección_073.png)
+
+![image](imagenes/Selección_074.png)
+
+* Comprobamos el funcionamiento desde el cliente
+
+![image](imagenes/Selección_075.png)
+
+![image](imagenes/Selección_076.png)
