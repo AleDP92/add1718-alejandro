@@ -1,0 +1,24 @@
+UUID=9e60368b-6495-4144-8709-3bf279394082 swap                 swap       defaults              0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /                    btrfs      defaults              0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /boot/grub2/i386-pc  btrfs      subvol=@/boot/grub2/i386-pc 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /boot/grub2/x86_64-efi btrfs      subvol=@/boot/grub2/x86_64-efi 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /home                btrfs      subvol=@/home         0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /opt                 btrfs      subvol=@/opt          0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /srv                 btrfs      subvol=@/srv          0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /tmp                 btrfs      subvol=@/tmp          0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /usr/local           btrfs      subvol=@/usr/local    0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/cache           btrfs      subvol=@/var/cache    0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/crash           btrfs      subvol=@/var/crash    0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/libvirt/images btrfs      subvol=@/var/lib/libvirt/images 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/machines    btrfs      subvol=@/var/lib/machines 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/mailman     btrfs      subvol=@/var/lib/mailman 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/mariadb     btrfs      subvol=@/var/lib/mariadb 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/mysql       btrfs      subvol=@/var/lib/mysql 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/named       btrfs      subvol=@/var/lib/named 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/lib/pgsql       btrfs      subvol=@/var/lib/pgsql 0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/log             btrfs      subvol=@/var/log      0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/opt             btrfs      subvol=@/var/opt      0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/spool           btrfs      subvol=@/var/spool    0 0
+UUID=1ece562d-0ef2-4072-a7fa-32d99ba4e919 /var/tmp             btrfs      subvol=@/var/tmp      0 0
+//172.18.24.31/public /mnt/samba21-remoto/public cifs username=soldado1,password=78648819c 0 0
+
