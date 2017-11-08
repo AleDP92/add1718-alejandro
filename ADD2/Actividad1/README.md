@@ -23,13 +23,16 @@ Trabajar con el sistema de archivos compartidos Samba en OpenSUSE y Windows.
 ![image](images/Selección_001.png)
 
 * Capturar salida de los comandos:
-  * `ip a`
+* `ip a`
+
 ![image](images/Selección_003.png)
 
-  * `lsblk`
+* `lsblk`
+
 ![image](images/Selección_004.png)
 
-  * `sudo blkid`
+* `sudo blkid`
+
 ![image](images/Selección_005.png)
 
 ## 1.2 Usuarios locales
