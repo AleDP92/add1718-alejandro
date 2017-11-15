@@ -64,8 +64,26 @@
 
 * Usar `gq` en el cliente para comprobar que se han creado bien los usuarios
 
-[image](images/Selección_017.png)
+![image](images/Selección_017.png)
 
-[image](images/Selección_018.png)
+![image](images/Selección_018.png)
 
 ## 2.2 Instalar cliente LDAP
+
+* Debemos instalar el paquete `yast2-auth-client`, que nos ayudará a configurar la máquina para autenticación
+
+* Una vez instalado, vamos a `Yast -> LDAP y cliente Kerberos`
+
+![image](images/Selección_019.png)
+
+![image](images/Selección_020.png)
+
+## 2.3 Comprobamos desde el cliente
+
+* Desde el cliente comprobamos las salidas de los siguientes comandos
+
+![image](images/Selección_021.png)
+
+* Y probamos la conexión con uno de los usuarios.
+
+![image](images/Selección_022.png)
