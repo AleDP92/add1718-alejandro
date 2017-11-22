@@ -81,3 +81,33 @@
 * Ahora ya tenemos el servicio listo desde el cliente.
 
 ![image](images/Selección_018.png)
+
+![image](images/Selección_019.png)
+
+# 2 Acceso Web
+
+## 2.1 Configurar impresión WEB
+
+* Desde el cliente, abrimos el navegador e introducimos la url `http://<ip-del-servidor>/printers`
+
+![image](images/Selección_020.png)
+
+* Luego pinchamos en `propiedades`
+
+![image](images/Selección_023.png)
+
+* Y luego pinchamos en `conectar` para unir la impresora al cliente.
+
+![image](images/Selección_029.png)
+
+![image](images/Selección_030.png)
+
+## 2.2 Comprobar desde el navegador
+
+* Pausamos (a través del navegador haciendo click en la opción `pausar`) los trabajos de la impresora.
+
+![image](images/Selección_027.png)
+
+* Mandamos a imprimir algún documento, los cuales se quedarán en la cola de impresión.
+
+![image](images/Selección_028.png)
