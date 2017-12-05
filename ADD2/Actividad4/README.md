@@ -87,3 +87,67 @@
 * Ahora abrimos navegador en la máquina real con URL http://127.0.0.1:4567
 
 ![imagen](images/Selección_025.png)
+
+### 3.2 Suministro mediante Puppet
+
+* Modificar el archivo el archivo Vagrantfile de la siguiente forma:
+
+![imagen](images/Selección_026.png)
+
+* Crear un fichero manifests/default.pp, con las órdenes/instrucciones puppet para instalar el programa nmap.
+
+![imagen](images/Selección_027.png)
+
+* Parar la MV, destruirla y crearla de nuevo (vagrant halt, vagrant destroy y vagrant up).
+
+![imagen](images/Selección_028.png)
+
+![imagen](images/Selección_029.png)
+
+## 4 Nuestra caja personalizada
+
+### 4.1 Preparar la MV VirtualBox
+
+* Crear el usuario vagrant, para poder acceder a la máquina virtual por SSH.
+
+![imagen](images/Selección_030.png)
+
+* Creamos el directorio .SSH, donde nos descargamos la clave privada.
+
+![imagen](images/Selección_031.png)
+
+* Realizamos cambios en los permisos.
+
+![imagen](images/Selección_032.png)
+
+* Añadir vagrant ALL=(ALL) NOPASSWD: ALL a /etc/sudoers.
+
+![imagen](images/Selección_033.png)
+
+* Debemos asegurarnos que tenemos instalado las VirtualBox Guest Additions con una versión compatible con el host anfitrion.
+
+![imagen](images/Selección_034.png)
+
+### 4.2 Crear la caja vagrant
+
+* Vamos a crear una nueva carpeta mivagrantXXconmicaja.
+
+![imagen](images/Selección_035.png)
+
+* Ejecutamos vagrant init para crear el fichero de configuración nuevo.
+
+![imagen](images/Selección_036.png)
+
+* Crear la caja package.box a partir de la MV.
+
+![imagen](images/Selección_037.png)
+
+![imagen](images/Selección_038.png)
+
+* Finalmente, añado la nueva caja creada por mí al repositorio de vagrant.
+
+![imagen](images/Selección_039.png)
+
+* Faciendo vagrant ssh nos conectamos sin problemas con la máquina.
+
+![imagen](images/Selección_040.png)
