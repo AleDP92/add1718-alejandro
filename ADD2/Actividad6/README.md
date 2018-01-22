@@ -177,3 +177,5 @@ pluginsync = false # Desactiva los plugins para este agente
 ![image](images/Selección_033.png)
 
 ![image](images/Selección_035.png)
+
+## 5. Cliente puppet Windows
