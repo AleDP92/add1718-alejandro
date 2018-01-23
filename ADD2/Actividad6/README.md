@@ -241,3 +241,59 @@ puppet agent --configprint server #muestra el nombre del servidor puppet
 ```
 
 ![image](images/Selección_049.png)
+
+```console
+
+puppet agent --server masterXX.curso1718 --test #comprueba el estado del agente puppet
+
+```
+
+![image](images/Selección_050.png)
+
+```console
+
+puppet agent -t --debug --verbose #Comprobar el estado del agente puppet.
+
+```
+
+![image](images/Selección_051.png)
+
+```console
+
+facter #Para consultar datos de la máquina windows
+
+```
+
+![image](images/Selección_052.png)
+
+```console
+
+puppet resource user "nombre" #Para ver la configuración puppet del usuario
+
+```
+
+![image](images/Selección_053.png)
+
+```console
+
+puppet resource file c:\Users #Para var la configuración puppet de la carpeta
+
+```
+
+![image](images/Selección_054.png)
+
+### 5.3 Configuración hostwindows4.pp y hostwindows5.pp
+
+* Configuramos en el master el fichero `/etc/puppet/manifests/classes/hostwindows4.pp` para el cliente Windows
+
+![image](images/Selección_055.png)
+
+* También generamos el fichero hostwindows5.pp en el mismo directorio con el siguiente contenido
+
+![image](images/Selección_056.png)
+
+* Luego en site.pp indicamos que en cli2alu24 se cargue la configuración de los ficheros anteriormente generados
+
+![image](images/Selección_057.png)
+
+* En el cliente aplicamos los cambios desde la consola puppet y vemos como ya nos dice que ha creado los elementos deseados
