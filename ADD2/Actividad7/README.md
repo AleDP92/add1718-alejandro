@@ -103,3 +103,19 @@
 * Para realizar esta tarea periodica usaremos el comando `crontab`. Antes que nada, haremos un `crontab -l` para comprobar que no hay tareas programadas
 
 ![images](images/Selección_017.png)
+
+* Una vez comprobado esto, con el comando `crontab -e` abrimos el editor de `crontab`, que por defecto utiliza el editor `vim`
+
+ Ahí es donde generaremos el siguiente script
+
+![images](images/000195.png)
+
+* Ahora realizamos un `crontab -l` de nuevo y observamos que la tarea ya está creada
+
+![images](images/000196.png)
+
+* Y por último vemos que se ha ejecutado satisfactoriamente
+
+![images](images/000197.png)
+
+![images](images/000198.png)
