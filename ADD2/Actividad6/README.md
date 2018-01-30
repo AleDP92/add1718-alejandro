@@ -179,3 +179,121 @@ pluginsync = false # Desactiva los plugins para este agente
 ![image](images/Selección_035.png)
 
 ## 5. Cliente puppet Windows
+
+* Nos vamos de nuevo a la MV1 (master24), desde donde crearemos el nuevo fichero de configuración para la MV3 con SO Windows
+
+![image](images/Selección_036.png)
+
+* Luego en el `site.pp` agregamos al host `windows`
+
+![image](images/Selección_037.png)
+
+* Hacemos un tree del directorio `/etc/puppet`
+
+![image](images/Selección_038.png)
+
+* Reiniciamos el servicio de `puppetmaster`
+
+![image](images/Selección_039.png)
+
+* Ejecutamos el comando `facter` en el master para saber la versión de puppet que estamos usando
+
+![image](images/Selección_040.png)
+
+### 5.1 Instalación del cliente puppet en Windows
+
+* A sabiendas de la versión de puppet que tenemos en el master, vamos al enlace https://downloads.puppetlabs.com/windows/ y descargamos la versión correspondiente
+
+![image](images/Selección_041.png)
+
+* Realizamos la instalación a través del asistente
+
+![image](images/Selección_042.png)
+
+![image](images/Selección_043.png)
+
+![image](images/Selección_044.png)
+
+* Modificamos el fichero `C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf` que es el que le indicará al cliente quién es su master
+
+![image](images/Selección_045.png)
+
+* Una vez hecho esto ya deberíamos recibir el certificado en el master
+
+![image](images/Selección_046.png)
+
+* Lo agregamos
+
+![image](images/Selección_047.png)
+
+### 5.2 Comprobamos los cambios
+
+* Vamos al cliente, donde iniciamos la consola de puppet como administrador
+
+![image](images/Selección_048.png)
+
+* Y ahora ejecutamos los siguientes comandos:
+
+```console
+
+puppet agent --configprint server #muestra el nombre del servidor puppet
+
+```
+
+![image](images/Selección_049.png)
+
+```console
+
+puppet agent --server masterXX.curso1718 --test #comprueba el estado del agente puppet
+
+```
+
+![image](images/Selección_050.png)
+
+```console
+
+puppet agent -t --debug --verbose #Comprobar el estado del agente puppet.
+
+```
+
+![image](images/Selección_051.png)
+
+```console
+
+facter #Para consultar datos de la máquina windows
+
+```
+
+![image](images/Selección_052.png)
+
+```console
+
+puppet resource user "nombre" #Para ver la configuración puppet del usuario
+
+```
+
+![image](images/Selección_053.png)
+
+```console
+
+puppet resource file c:\Users #Para var la configuración puppet de la carpeta
+
+```
+
+![image](images/Selección_054.png)
+
+### 5.3 Configuración hostwindows4.pp y hostwindows5.pp
+
+* Configuramos en el master el fichero `/etc/puppet/manifests/classes/hostwindows4.pp` para el cliente Windows
+
+![image](images/Selección_055.png)
+
+* También generamos el fichero hostwindows5.pp en el mismo directorio con el siguiente contenido
+
+![image](images/Selección_056.png)
+
+* Luego en site.pp indicamos que en cli2alu24 se cargue la configuración de los ficheros anteriormente generados
+
+![image](images/Selección_057.png)
+
+* En el cliente aplicamos los cambios desde la consola puppet y vemos como ya nos dice que ha creado los elementos deseados
