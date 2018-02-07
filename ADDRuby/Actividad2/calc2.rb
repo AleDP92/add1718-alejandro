@@ -4,6 +4,7 @@ fichero=ARGV[0]
 
 if ARGV.size < 1
   puts "tienes que escribir un argumento para que el programa funcione"
+  puts "--------------------------------------------------------------"
   exit
 else
   content = `cat #{fichero}`

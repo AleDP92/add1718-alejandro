@@ -6,6 +6,7 @@ num2=ARGV[2].to_i
 
 if ARGV.size < 3
   puts "Para que el programa funcione debes insertar tres argumentos"
+  puts "------------------------------------------------------------"
   exit
 end
 
