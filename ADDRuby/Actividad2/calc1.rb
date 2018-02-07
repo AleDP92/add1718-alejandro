@@ -9,10 +9,9 @@ if ARGV.size < 3
   exit
 end
 
-
 if op == "+"
-  sum = num1 + num2	
-  puts "El resultado de la suma entre #{num1} y #{num2} es igual a #{sum}" 
+  sum = num1 + num2
+  puts "El resultado de la suma entre #{num1} y #{num2} es igual a #{sum}"
 elsif op == "-"
   min = num1 - num2
   puts "El resultado de la resta entre #{num1} y #{num2} es igual a #{min}"
