@@ -16,16 +16,16 @@ else
   op = fields[1]
   num2 = fields[2].to_i
 
-	  if op == "+"
-	    sum = num1 + num2
+    if op == "+"
+      sum = num1 + num2
       puts "El resultado de la suma entre #{num1} y #{num2} es igual a #{sum}"
-	  elsif op == "-"
+    elsif op == "-"
       min = num1 - num2
-	    puts "El resultado de la resta entre #{num1} y #{num2} es igual a #{min}"
-	  elsif op == "x"
+      puts "El resultado de la resta entre #{num1} y #{num2} es igual a #{min}"
+    elsif op == "x"
       mul = num1 * num2
       puts "El resultado de la multiplicación entre #{num1} y #{num2} es igual a #{mul}"
-	  elsif op == "/"
+    elsif op == "/"
       div = num1 / num2
       puts "El resultado de la división entre #{num1} y #{num2} es igual a #{div}"
     end
